@@ -7,6 +7,7 @@ import Styled from './Components/Styled/Styled';
 import UseOnlineCustom from './Components/CustomHook/UseOnlineCustom'
 import SassExplore from './Components/SassExplore/SassExplore';
 import CustomReactHook from './Components/CustomReactHook/CustomReactHook';
+import TypeScriptExplore from './Components/TypescriptExplore/TypeScriptExplore';
 // import useOnline  './Components/CustomHook/useOnline.js';
 function App() {
   // console.log(useOnline);
@@ -15,7 +16,8 @@ function App() {
       {/* <Styled/>
       <UseOnlineCustom/>
       <SassExplore/> */}
-      <CustomReactHook/>
+      {/* <CustomReactHook/> */}
+      <TypeScriptExplore/>
     </div>
   );
 }
