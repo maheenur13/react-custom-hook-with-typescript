@@ -2,11 +2,7 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 
-interface Props {
-   
-    inputClickHandler:React.ChangeEventHandler<HTMLInputElement>;
-    // dragTrueOrFalse: boolean;
-}
+
 
 const Input = styled.input`
 padding: 17px 9px;
@@ -22,19 +18,42 @@ interface TextNode {
     text:string;
     // ref:string;
 }
+interface Props {
+   
+    // inputClickHandler:React.ChangeEventHandler<HTMLInputElement | boolean>;
+    // dragValue:boolean;
+    // drag:boolean;
+    children:(
+        drag:boolean,
+        setDrag:React.Dispatch<React.SetStateAction<boolean>>
+    )=> JSX.Element | null;
 
-const TextField : React.FC<Props> = ({inputClickHandler}) => {
-    const [count, setCount] = useState<TextNode>({text:''})
+
+
+
+    // dragTrueOrFalse: boolean;
+}
+const TextField : React.FC<Props> = ({children}) => {
+    // const [count, setCount] = useState<TextNode>({text:''})
     // 
-    const [drag, setDrag]= useState<boolean>(true)
-    const inputRef = useRef<HTMLInputElement>( null)
-
+    const [drag ,setDrag]= useState(false)
+    console.log(drag);
+    // const inputRef = useRef<HTMLInputElement>( null)
+ 
     
     return (
         <div>
+            {/* {children(drag,setDrag)} */}
+            {/* 
+            
+            <p>{count.text}</p> */}
             <Text> This is an Input  </Text>
-            <Input ref={inputRef} onChange={inputClickHandler} draggable={drag}  />
-            <p>{count.text}</p>
+            <Input onChange={()=>{
+                
+                setDrag(true)
+                
+                }}  draggable={drag} />
+            
         </div>
     );
 };

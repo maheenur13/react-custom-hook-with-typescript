@@ -4,11 +4,9 @@ import TextField from './TextField';
 const TypeScriptExplore:React.FC = () => {
     return (
         <div>
-            <TextField  inputClickHandler = {e=>{
-                console.log(e)
-            }}
-            // dragTrueOrFalse={true}
-            />
+            <TextField>
+                {(drag,setDrag) =>(<div>{drag}</div>)}
+            </TextField>
         </div>
     );
 };
