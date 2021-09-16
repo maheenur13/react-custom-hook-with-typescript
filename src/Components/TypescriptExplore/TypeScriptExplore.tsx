@@ -5,7 +5,8 @@ const TypeScriptExplore:React.FC = () => {
     return (
         <div>
             <TextField>
-                {(drag,setDrag) =>(<div>{drag}</div>)}
+        
+                {(drag,setDrag) =>(<div></div>)}
             </TextField>
         </div>
     );
